@@ -6,8 +6,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ThreadTest {
     private volatile static int count = 0;
 
-    public static Lock lock = new ReentrantLock();
-    public static void main(String[] args) {
+    public static Lock lock = new ReentrantLock();//lock 显示锁
+    public static void t1(String[] args) {
         for (int i = 0; i < 2; i++) {
             new Thread(new Runnable() {
                 @Override
@@ -32,7 +32,7 @@ public class ThreadTest {
         }
         System.out.println(Thread.currentThread().getName()+"  最终count："+count);
     }
-    public static synchronized void add(){
+    public static synchronized void add(){ //synchronized 隐式锁  同步方法
 //        lock.lock();
         try{
             count++;
@@ -73,6 +73,7 @@ public class ThreadTest {
     /**
      * case3:
      */
+
 
 
 }

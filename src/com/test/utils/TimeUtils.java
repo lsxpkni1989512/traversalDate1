@@ -11,6 +11,7 @@ public class TimeUtils {
         Calendar a = Calendar.getInstance();
         a.set(Calendar.YEAR, year);
         a.set(Calendar.MONTH, month - 1);
+
         a.set(Calendar.DATE, 1);
         a.roll(Calendar.DATE, -1);
         int maxDate = a.get(Calendar.DATE);
@@ -21,7 +22,7 @@ public class TimeUtils {
     public static void dayReport(Date month) {
 
         Calendar cal = Calendar.getInstance();
-        cal.setTime(month);//month 为指定月份任意日期
+        cal.setTime(month);//month 为指定月份任意日期A
         int year = cal.get(Calendar.YEAR);
         int m = cal.get(Calendar.MONTH);
         int mm = cal.get(Calendar.DAY_OF_MONTH);

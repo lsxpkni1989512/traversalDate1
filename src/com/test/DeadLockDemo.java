@@ -1,5 +1,7 @@
 package com.test;
 
+import java.util.concurrent.TimeUnit;
+
 class HoldLockThread implements Runnable{
 
 
@@ -24,10 +26,13 @@ class HoldLockThread implements Runnable{
 public class DeadLockDemo {
     public static void main(String[] args) {
 
-        String lockA = "lockA";
-        String lockB = "lockB";
-        new Thread(new HoldLockThread(lockA,lockB),"A").start();
-        new Thread(new HoldLockThread(lockB,lockA),"B").start();
+//        String lockA = "lockA";
+//        String lockB = "lockB";
+//        new Thread(new HoldLockThread(lockA,lockB),"A").start();
+//        new Thread(new HoldLockThread(lockB,lockA),"B").start();
+        System.out.println("********");
+        try{ TimeUnit.SECONDS.sleep(Integer.MAX_VALUE);}catch(Exception e){e.printStackTrace();}
+
 
     }
 
